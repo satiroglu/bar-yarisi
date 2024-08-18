@@ -51,7 +51,7 @@ $.when(
       }) || {}
     ).emoji;
   }
-  let startIndex = 0;
+  let startIndex = 1;
   let startYear = years[startIndex];
   option = {
     legend: {
@@ -68,7 +68,7 @@ $.when(
       max: "dataMax",
       axisLabel: {
         formatter: function (n) {
-          return "$" + Math.round(n) + "m";
+          return Math.round(n) + "";
         },
       },
     },
@@ -84,15 +84,15 @@ $.when(
       axisLabel: {
         show: true,
         fontSize: 14,
-        //   formatter: function (value) {
-        //     return value + "{flag|" + getFlag(value) + "}";
-        //   },
-        //   rich: {
-        //     flag: {
-        //       fontSize: 16,
-        //       padding: 3,
-        //     },
-        //   },
+          formatter: function (value) {
+            return value + "{flag|" + getFlag(value) + "}";
+          },
+          rich: {
+            flag: {
+              fontSize: 16,
+              padding: 3,
+            },
+          },
       },
       animationDuration: 300,
       animationDurationUpdate: 300,
